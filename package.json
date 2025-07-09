@@ -1,0 +1,25 @@
+{
+  "name": "extract-personal-data-from-pdf-contract",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test --watch ./test/**/*.test.js",
+    "start": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GibsonCS/extract-personal-data-from-pdf-contract.git"
+  },
+  "keywords": [],
+  "author": "Gibson Cruz",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/GibsonCS/extract-personal-data-from-pdf-contract/issues"
+  },
+  "homepage": "https://github.com/GibsonCS/extract-personal-data-from-pdf-contract#readme",
+  "dependencies": {
+    "pdf-parse": "^1.1.1"
+  }
+}
