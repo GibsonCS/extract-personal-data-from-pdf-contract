@@ -1,4 +1,4 @@
-import { TextProcessorFluentAPI } from "./textProcessorFluentAPI";
+import { TextProcessorFluentAPI } from "./textProcessorFluentAPI.js";
 
 export default class TextProcessorFacade {
   constructor(content) {
@@ -6,7 +6,7 @@ export default class TextProcessorFacade {
   }
 
   execute() {
-    this.textProcessorFluentAPI
+    return this.textProcessorFluentAPI
       .extractPeopleData()
       .dividTextInColums()
       .removeEmptyCharacters()
