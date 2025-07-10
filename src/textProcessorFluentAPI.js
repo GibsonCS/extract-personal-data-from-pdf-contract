@@ -1,4 +1,5 @@
 import { evaluateRegex } from "./util/evaluateRegex.js";
+import Person from "./person.js";
 
 export class TextProcessorFluentAPI {
   #content;
@@ -26,6 +27,11 @@ export class TextProcessorFluentAPI {
     this.#content = this.#content.map((array) =>
       array.map((item) => item.replace(trimSpaceRegex, ""))
     );
+    return this;
+  }
+
+  mapPerson() {
+    this.#content = this.#content.map((array) => new Person(array));
     return this;
   }
 
