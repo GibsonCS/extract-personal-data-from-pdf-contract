@@ -21,6 +21,14 @@ export class TextProcessorFluentAPI {
     return this;
   }
 
+  removeEmptyCharacters() {
+    const trimSpaceRegex = evaluateRegex(/^\s+|\s+$|\n/g);
+    this.#content = this.#content.map((array) =>
+      array.map((item) => item.replace(trimSpaceRegex, ""))
+    );
+    return this;
+  }
+
   build() {
     return this.#content;
   }
