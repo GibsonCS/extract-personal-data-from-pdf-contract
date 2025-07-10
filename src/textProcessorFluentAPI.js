@@ -15,6 +15,12 @@ export class TextProcessorFluentAPI {
     return this;
   }
 
+  dividTextInColums() {
+    const splitRegex = evaluateRegex(/,/);
+    this.#content = this.#content.map((line) => line.split(splitRegex));
+    return this;
+  }
+
   build() {
     return this.#content;
   }
