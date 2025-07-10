@@ -32,4 +32,34 @@ describe("textProcessorFluentAPI", () => {
       expect(result).to.be.deep.equal(expected);
     });
   });
+
+  describe("#divideTextInColumns", () => {
+    it("Should return a text divided in columns", () => {
+      const content = [
+        [
+          "Xuxa da Silva, brasileira, casada, CPF 235.743.420-12, residente e ",
+          "domiciliada a Rua dos bobos, zero, bairro Alphaville, São Paulo. ",
+        ].join("\n"),
+      ];
+
+      const result = new TextProcessorFluentAPI(content)
+        .dividTextInColums()
+        .build();
+
+      const expected = [
+        [
+          "Xuxa da Silva",
+          " brasileira",
+          " casada",
+          " CPF 235.743.420-12",
+          " residente e \ndomiciliada a Rua dos bobos",
+          " zero",
+          " bairro Alphaville",
+          " São Paulo. ",
+        ],
+      ];
+
+      expect(result).to.be.deep.equal(expected);
+    });
+  });
 });
